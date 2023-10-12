@@ -2,7 +2,7 @@
 
 namespace Mahamudra.Kata.GildedRose.Models;
 
-public class BackstageProduct : StateBase
+public class BackstageProduct : ProductBase
 {
     public BackstageProduct(string name, int sellIn, int quality) : base(name, sellIn, quality)
     {

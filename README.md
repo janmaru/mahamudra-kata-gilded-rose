@@ -20,7 +20,7 @@ definitive constraints (both functional and political).
 
 To run this code you need:
 
-+ A version of the .NET SDK capable of supporting, at least, C# 9.0 _and_ F# 5.0 (for details, see [official docs][2]).
++ A version of the .NET SDK capable of supporting C# 11 _and_ F# 7.0 (for details, see [official docs][2]).
 + Optionally, a text-editor or IDE which is capability of editing and compiling C# and/or F#.
 
 ---
@@ -29,23 +29,11 @@ To run this code you need:
 
 To help make things a bit more manageable, each branch in this repo represents a specific step in the overall journey.
 
- Projects                     | | Summary
-------------------------------|-|----------------------------------------------------------------------------
- `Mahamudra.Kata.GildedRose`  | | Project (in C#) console application, i.e. the start of the kata.
- ``                           | | Project (in F#): approval tests and property-based tests.
+ Projects                         | | Summary
+----------------------------------|-|----------------------------------------------------------------------------
+ `Mahamudra.Kata.GildedRose`      | | Project (in C#): console application, i.e. the start of the kata.
+ `Mahamudra.Kata.GildedRose.Test` | | Project (in F#): unit tests  
  
-
-The first time you work with the repository you'll likely need to run: 
-
-` > dotnet tool restore && dotnet paket restore`.
-
-Subsequent to that, you can use the editor or IDE of your choice. But the following CLI commands might be useful (note,
-they all assume you are in the root folder of the repository... where the `GrowingGildedRose.sln` file lives):
-
-+ Build all the projects: `> dotnet build`
-+ Run the whole test suite: `> dotnet test`
-+ Run just the main executable: `> dotnet run -p source/Mahamudra.Kata.GildedRose`
-
 ---
 
 #### Problem Statement

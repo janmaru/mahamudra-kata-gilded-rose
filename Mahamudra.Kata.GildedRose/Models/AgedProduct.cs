@@ -2,7 +2,7 @@
 
 namespace Mahamudra.Kata.GildedRose.Models;
 
-public class AgedProduct : StateBase
+public class AgedProduct : ProductBase
 {
     public AgedProduct(string name, int sellIn, int quality) : base(name, sellIn, quality)
     {

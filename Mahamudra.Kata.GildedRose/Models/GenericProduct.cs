@@ -1,7 +1,7 @@
 ﻿using Mahamudra.Kata.GildedRose.Interfaces;
 
 namespace Mahamudra.Kata.GildedRose.Models;
-public class GenericProduct : StateBase
+public class GenericProduct : ProductBase
 {
     public GenericProduct(string name, int sellIn, int quality) : base(name, sellIn, quality)
     {

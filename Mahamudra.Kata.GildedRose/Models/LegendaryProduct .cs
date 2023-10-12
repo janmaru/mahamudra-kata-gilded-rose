@@ -2,7 +2,7 @@
 
 namespace Mahamudra.Kata.GildedRose.Models;
 
-public class LegendaryProduct : StateBase
+public class LegendaryProduct : ProductBase
 {
     public LegendaryProduct(string name, int sellIn, int quality) : base(name, sellIn, quality)
     {

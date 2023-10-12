@@ -5,10 +5,10 @@ namespace Mahamudra.Kata.GildedRose.Extensions;
 
 public static class ProductExtensions
 {
-    public static StateBase Map(this Item item)
-    {
-        StateBase product;
-        if (item.Name.Contains("Aged Brie"))
+    public static ProductBase Map(this Item? item)
+    { 
+        ProductBase product;
+        if (item!.Name!.Contains("Aged Brie"))
             product = new AgedProduct(item.Name, item.SellIn, item.Quality);
         else if (item.Name.Contains("Sulfuras"))
             product = new LegendaryProduct(item.Name, item.SellIn, item.Quality);

@@ -7,28 +7,29 @@ using static System.Console;
 public class Program
 { 
     IList<Item>? Items;
+    IList<ProductBase>? Products;
     #region private
-    private static List<StateBase> _products = new(); 
     private void Print()
     {
-        foreach (var p in _products)
+        if (Products is null || !Products.Any()) return;
+        foreach (var p in Products)
             System.Console.WriteLine($"Item {{ Name = {p.Name}" +
                       $", Quality = {p.Quality}" +
                       $", SellIn = {p.SellIn} }}");
         System.Console.WriteLine("Press <RETURN> to exit.");
     }
     #endregion 
-    public void UpdateQuality(int days)
+    public void UpdateQuality(IList<Item>? items)
     {
-        for (var i = 0; i < _products.Count; i++)
-            _products[i].PassingOfTime(days);
+        if (items is null || !items.Any()) return;
+
+        Products = items.Select(x => x.Map()).ToList();
+        for (var i = 0; i < Products.Count; i++)
+            Products[i].PassingOfTime(1);
     }
     public static void Main()
     {
-        WriteLine("OMGHAI!");
-
-        var days = 100;
-
+        WriteLine("OMGHAI!");   
         var app = new Program
         {
             Items = new List<Item>
@@ -45,10 +46,8 @@ public class Program
                         },
                     new (){ Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 }
                 }
-        };
-
-        _products.AddRange(app.Items.Select(x => x.Map()));
-        app.UpdateQuality(days);
+        }; 
+        app.UpdateQuality(app.Items);
         app.Print();
         System.Console.ReadLine();
     }
